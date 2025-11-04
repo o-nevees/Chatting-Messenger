@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Chatting</string>
+    <string name="status_connecting">Conectando</string>
+    
+    <!-- Chat -->
+    <string name="chat_error_loading">Erro ao carregar conversa.</string>
+    <string name="chat_error_open_file">Não foi possível abrir o arquivo.</string>
+    <string name="chat_download_started">Iniciando download…</string>
+    <string name="chat_error_file_unavailable">Arquivo não disponível.</string>
+    <string name="chat_messages_copied">%1$d mensagem(ns) copiada(s)!</string>
+    <string name="loading">Carregando…</string>
+    <string name="back">Voltar</string>
+    <string name="chat_selection_count">%1$d selecionada(s)</string>
+    <string name="chat_clear_selection">Limpar seleção</string>
+    <string name="copy">Copiar</string>
+    <string name="delete">Deletar</string>
+    <string name="chat_wallpaper_description">Papel de parede da conversa</string>
+    <string name="chat_sent_image_description">Imagem enviada</string>
+    <string name="download">Baixar</string>
+    <string name="download_file">Baixar Arquivo</string>
+    <string name="chat_download_failed">Falha no download</string>
+    <string name="file">Arquivo</string>
+    <string name="emoji">Emoji</string>
+    <string name="message">Mensagem</string>
+    <string name="attach">Anexar</string>
+    <string name="send">Enviar</string>
+    <string name="message_status_description">Status: %1$s</string>
+    
+    <string name="incio">Início</string>
+</resources>

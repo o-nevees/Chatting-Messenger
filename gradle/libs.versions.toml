@@ -1,0 +1,135 @@
+[versions]
+# Gradle e Kotlin
+androidGradlePlugin = "8.6.0"
+kotlin = "2.0.0"
+ksp = "2.0.0-1.0.21"
+
+# Google
+googleServices = "4.4.2"
+protobufPlugin = "0.9.5"
+protobuf = "3.25.3" # Versão Java comum
+libphonenumber = "8.13.40"
+
+# Networking
+retrofit = "2.11.0"
+okhttp = "4.12.0"
+
+# AndroidX Core
+appcompat = "1.7.1"
+coreKtx = "1.13.1"
+activityCompose = "1.9.0"
+securityCrypto = "1.1.0" # Movido para versão estável
+
+# Compose
+# BOM (Bill of Materials) controla a versão da maioria das libs do Compose
+composeBom = "2025.10.01" 
+composeNavigation = "2.9.5" # Navegação não faz parte do BOM principal
+
+# Outras Libs de UI
+coilCompose = "2.6.0"
+
+# Ciclo de Vida e Corotinas
+lifecycle = "2.8.1"
+coroutines = "1.8.1"
+room = "2.6.1"
+
+# Firebase
+firebaseBom = "33.1.1"
+playServicesAuth = "21.2.0"
+
+
+[libraries]
+# Networking
+retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-converterGson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
+okhttp-core = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+okhttp-loggingInterceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
+
+# AndroidX Core
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-coreKtx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+
+# Compose (Note que a maioria não tem version.ref, pois usam o BOM)
+androidx-activityCompose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
+androidx-compose-ui = { module = "androidx.compose.ui:ui" }
+androidx-compose-ui-text = { module = "androidx.compose.ui:ui-text" }
+
+androidx-compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "composeNavigation" }
+androidx-compose-ui-graphics = { module = "androidx.compose.ui:ui-graphics" } # Inclusão explícita (ok)
+androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
+androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
+androidx-compose-material3 = { module = "androidx.compose.material3:material3" }
+androidx-compose-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata" } # CORRIGIDO: Removido version.ref
+androidx-compose-animation = { module = "androidx.compose.animation:animation" }
+androidx-compose-material-iconsExtended = { module = "androidx.compose.material:material-icons-extended" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+
+# Lifecycle
+androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodelCompose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+androidx-lifecycle-runtimeCompose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
+androidx-lifecycle-runtimeKtx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodelKtx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-livedataKtx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-commonJava8 = { module = "androidx.lifecycle:lifecycle-common-java8", version.ref = "lifecycle" }
+
+# Coroutines
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+
+# Room
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+
+# Firebase (Note que a maioria não tem version.ref, pois usam o BOM)
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+firebase-authKtx = { module = "com.google.firebase:firebase-auth-ktx" }
+firebase-messaging = { module = "com.google.firebase:firebase-messaging" }
+gms-playServicesAuth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
+
+# Outros
+androidx-security-crypto = { module = "androidx.security:security-crypto", version.ref = "securityCrypto" }
+google-libphonenumber = { module = "com.googlecode.libphonenumber:libphonenumber", version.ref = "libphonenumber" }
+protobuf-java = { module = "com.google.protobuf:protobuf-java", version.ref = "protobuf" }
+
+
+[bundles]
+retrofit = ["retrofit-core", "retrofit-converterGson"]
+okhttp = ["okhttp-core", "okhttp-loggingInterceptor"]
+
+# 'ui-text' e 'ui-graphics' são dependências de 'ui', então são redundantes aqui.
+# Mantive seu 'ui-text' explícito, mas saiba que 'ui' sozinho já o traria.
+compose = [
+    "androidx-compose-ui",
+    "androidx-compose-ui-text",
+    "androidx-compose-ui-graphics",
+    "androidx-compose-ui-tooling-preview", # CORRIGIDO: Nome do alias estava com pontos
+    "androidx-compose-material3",
+    "androidx-compose-animation",
+    "androidx-compose-material-iconsExtended"
+]
+lifecycle = [
+    "androidx-lifecycle-process",
+    "androidx-lifecycle-viewmodelCompose",
+    "androidx-lifecycle-runtimeCompose",
+    "androidx-lifecycle-runtimeKtx",
+    "androidx-lifecycle-viewmodelKtx",
+    "androidx-lifecycle-livedataKtx",
+    "androidx-lifecycle-commonJava8"
+]
+coroutines = ["kotlinx-coroutines-core", "kotlinx-coroutines-android"]
+room = ["androidx-room-runtime", "androidx-room-ktx"]
+firebase = ["firebase-authKtx", "firebase-messaging", "gms-playServicesAuth"]
+
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+androidLibrary = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+googleServices = { id = "com.google.gms.google-services", version.ref = "googleServices" }
+kotlinCompose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+kotlinParcelize = { id = "org.jetbrains.kotlin.plugin.parcelize" }
+protobuf = { id = "com.google.protobuf", version.ref = "protobufPlugin" }

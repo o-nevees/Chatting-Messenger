@@ -1,0 +1,23 @@
+# Arquivos de Build
+/build
+/.gradle
+/app/build
+
+# Configurações Locais
+local.properties
+
+# Chaves e Configurações Sensíveis
+google-services.json
+*.keystore
+*.jks
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Pacotes
+*.apk
+*.aab

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <cache-path
+        name="media_cache"
+        path="media_cache/" />
+    <files-path
+        name="sent_files"
+        path="Sent/" />
+</paths>
