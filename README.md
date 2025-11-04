@@ -67,6 +67,14 @@ Aqui estão algumas telas do aplicativo em funcionamento:
 * Melhorar a documentação (como este README!).
 * Melhorar o design e a experiência do usuário (UX/UI).
 
+---
+
+## 👏 Contribuidores
+
+Um agradecimento especial a estas pessoas maravilhosas que ajudaram no projeto:
+
+* **[@basedcatx](https://github.com/basedcatx)** - (Adicione aqui a contribuição, ex: Ajuda com ideias e design)
+* 
 ## 📝 Licença
 
 Este projeto é licenciado sob a **Licença MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
