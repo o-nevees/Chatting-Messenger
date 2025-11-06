@@ -1,0 +1,35 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Chatting-Messenger/app/src/main/java/com/chatting/ui/MyApp.kt",
+      "selection": {
+        "end": {
+          "column": 1,
+          "index": 2717,
+          "line": 91
+        },
+        "start": {
+          "column": 1,
+          "index": 2717,
+          "line": 91
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/AndroidIDEProjects/Chatting-Messenger/app/src/main/java/com/chatting/ui/MainActivity.kt",
+      "selection": {
+        "end": {
+          "column": 7,
+          "index": 7,
+          "line": 0
+        },
+        "start": {
+          "column": 0,
+          "index": 0,
+          "line": 0
+        }
+      }
+    }
+  ],
+  "selectedFile": "/storage/emulated/0/AndroidIDEProjects/Chatting-Messenger/app/src/main/java/com/chatting/ui/MyApp.kt"
+}
